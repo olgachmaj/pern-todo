@@ -15,18 +15,21 @@ app.listen(5000, () => {
 
 //create a todo
 
-app.post("/todos", (req,res) => {
-  try{
-    const { description } = req.body
-    const newTodo = await pool.query(
-      "INSERT INTO todo (description) VALUES ($1) RETURNING *",
-    [description])
-
-  } catch (err) {
-      console.error(err.message);
-    }
-
-})
+// app.post("/todos", (req,res) => {
+//   try{
+//     const { description } = req.body
+//     const newTodo = await pool.query(
+//       "INSERT INTO todo (description) VALUES ($1) RETURNING *",
+//     [description]
+//   );
+//
+//
+//     res.json(newTodo[rows]);
+//   } catch (err) {
+//       console.error(err.message);
+//     }
+//
+// })
 //get all todos
 
 //get a todo
